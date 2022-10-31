@@ -82,7 +82,6 @@ export default {
   height: 1080px;
   background: url(@/assets/images/index__banner-1.png) no-repeat center center;
   background-size: cover;
-  background-attachment: fixed;
 }
 .pmfo-home__banner-textbox{
   position: absolute;
