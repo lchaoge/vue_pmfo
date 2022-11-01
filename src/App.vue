@@ -5,18 +5,20 @@
       <router-view />
       <PmfoFooter />
     </el-main>
-    <el-backtop target=".el-main"></el-backtop>
+    <PmfoBackTop></PmfoBackTop>
   </el-container>
 </template>
 
 <script>
 import PmfoHeader from '@/components/Header'
 import PmfoFooter from '@/components/Footer'
+import PmfoBackTop from '@/components/BackTop'
 export default {
   name: 'App',
   components: {
     PmfoHeader,
-    PmfoFooter
+    PmfoFooter,
+    PmfoBackTop
   },
   data(){
     return {

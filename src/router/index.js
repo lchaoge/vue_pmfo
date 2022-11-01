@@ -10,7 +10,7 @@ const ServiceScope = () => import(/* webpackChunkName: "ServiceScope" */ '@/page
 const OurServices = () => import(/* webpackChunkName: "OurServices" */ '@/pages/OurServices');
 
 const $router = new Router({
-  // mode: 'history',
+  mode: 'history',
   // 解决vue框架页面跳转有白色不可追踪色块的bug
   scrollBehavior (to, from, savedPosition) {
     if (to.hash) {
