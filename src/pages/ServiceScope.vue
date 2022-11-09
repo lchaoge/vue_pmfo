@@ -1,6 +1,6 @@
 
 <template>
-  <div class="pmfo-serviceScope">
+  <div class="pmfo-main">
     <div class="pmfo-serviceScope__card pmfo-serviceScope__card-1">
       <div class="pmfo-serviceScope__card-wrapper">
         <h3 class="pmfo-serviceScope__card-title wow slideInDown" data-wow-duration="1s">{{$t('serviceScope.card1.title')}}</h3>
@@ -53,6 +53,7 @@ export default {
   background-size: cover;
 }
 .pmfo-serviceScope__card-wrapper{
+  background: rgba(0,0,0,.5);
   padding: 275px 158px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

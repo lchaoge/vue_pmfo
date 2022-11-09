@@ -33,7 +33,7 @@ export default {
     return{
       // routerIndex: "0",
       routerList: [
-        {index: "0", name: '企业介绍', url: "/"},
+        {index: "0", name: '企业介绍', url: "/home"},
         {index: "1", name: '集团构架', url: "/groupStructure"},
         {index: "2", name: '集团核⼼优势', url: "/nuclearAdvantage"},
         {index: "3", name: '团队成员', url: "/teamMembers"},
@@ -47,14 +47,18 @@ export default {
   },
   computed: {
     routerIndex:function(){
+      let _routerIndex = 0
       let fullPath = this.$route.fullPath
       let find = this.routerList.find(item=>{
-        return item.url === fullPath
+        if(fullPath !="/" && fullPath.indexOf(item.url) != -1){
+          _routerIndex = item.index
+        }
+        return fullPath === item.url
       })
       if(find){
         return find.index
       }else{
-        return "0"
+        return `${_routerIndex}`
       }
     }
   },
@@ -67,6 +71,7 @@ export default {
       let find = this.routerList.find(item=>{
         return item.url === fullPath
       })
+      
       if(find){
         this.routerIndex = find.index
       }else{
@@ -78,7 +83,7 @@ export default {
       this.$router.push(url)
     },
     homeEvt(){
-      this.$router.push("/")
+      // this.$router.push("/")
     },
     handleSetLanguage(lang) {
       this.$i18n.locale = lang
@@ -113,7 +118,6 @@ export default {
     justify-content: space-between;
   }
 }
-.pmfo__header
 .pmfo__header-login,.pmfo__header-login:hover{
   cursor: pointer;
   text-decoration: none;
@@ -320,5 +324,10 @@ export default {
 }
 /* 1920 */
 @media (min-width: 1920px) {
+}
+
+
+.pmfo-home .pmfo__header{
+  background: transparent; 
 }
 </style>

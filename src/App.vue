@@ -1,5 +1,5 @@
 <template>
-  <el-container id="app" direction="vertical">
+  <el-container id="app" direction="vertical" :class="[routerName]">
     <PmfoHeader />
     <el-main>
       <router-view />
@@ -22,9 +22,20 @@ export default {
   },
   data(){
     return {
-
+      routerName: "pmfo-home"
     }
   },
+  watch: {
+    $route(to){
+      this.routerName = 'pmfo-' + to.name
+    },
+  },
+  mounted() {
+    
+  },
+  methods: {
+    
+  }
 }
 </script>
 
@@ -47,6 +58,8 @@ html,body{
     background-clip: padding-box;
     min-height: 5px;
     border-radius: 5px;
-
+}
+.pmfo-home .el-main{
+  margin-top: 0;
 }
 </style>

@@ -20,6 +20,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .pmfo__footer{
+  position: relative;
   background: #1A1A1A;
   padding: 10px;
 }

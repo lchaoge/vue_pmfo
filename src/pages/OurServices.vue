@@ -1,5 +1,5 @@
 <template>
-  <div class="pmfo-ourServices">
+  <div class="pmfo-main">
     <div class="pmfo-ourServices__shutter">
       <div
         class="pmfo-ourServices__shutter-card pmfo-ourServices__shutter-card-1"

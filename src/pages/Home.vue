@@ -1,6 +1,9 @@
 <template>
-<div class="pmfo-home">
+<div class="pmfo-main">
   <div class="pmfo-home__banner">
+    <div class="pmfo-home__banner-video" v-if="false">
+      <video src="//video.699pic.com/videos/14/32/47/b_5jyC5itHNauJ1600143247.mp4" loop="" autoplay="" muted=""></video>
+    </div>
     <div class="pmfo-home__banner-textbox wow slideInLeft" data-wow-duration="1s">
       <p class="wow slideInLeft" data-wow-duration="1s" name="home.banner.text1">{{$t('home.banner.text1')}}</p>
       <p class="wow slideInLeft" data-wow-duration="1.5s" name="home.banner.text2">{{$t('home.banner.text2')}}</p>
@@ -71,17 +74,35 @@ export default {
     this.$nextTick(() => {
       new this.$wow.WOW().init();
     });
+    window.addEventListener("scroll", this.setHeaderBack, true)
   },
+  methods:{
+    setHeaderBack() {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      let opacity = scrollTop * 0.001 >= 1 ? 1 : scrollTop * 0.001
+      
+      if(this.$route.name === 'home'){
+        document.getElementsByClassName("pmfo__header")[0].style.background = `rgba(6,28,45,${opacity})`
+      }
+      
+    },
+  }
+  
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .pmfo-home__banner{
   position: relative;
   height: 1080px;
   background: url(@/assets/images/index__banner-1.png) no-repeat center center;
   background-size: cover;
+  overflow: hidden;
+}
+.pmfo-home__banner-video,.pmfo-home__banner-video video{
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
 }
 .pmfo-home__banner-textbox{
   position: absolute;

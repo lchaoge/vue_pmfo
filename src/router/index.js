@@ -6,6 +6,7 @@ const Home = () => import(/* webpackChunkName: "Home" */ '@/pages/Home');
 const GroupStructure = () => import(/* webpackChunkName: "GroupStructure" */ '@/pages/GroupStructure');
 const NuclearAdvantage = () => import(/* webpackChunkName: "NuclearAdvantage" */ '@/pages/NuclearAdvantage');
 const TeamMembers = () => import(/* webpackChunkName: "TeamMembers" */ '@/pages/TeamMembers');
+const TeamMembersDetail = () => import(/* webpackChunkName: "TeamMembers" */ '@/pages/TeamMembersDetail');
 const ServiceScope = () => import(/* webpackChunkName: "ServiceScope" */ '@/pages/ServiceScope');
 const OurServices = () => import(/* webpackChunkName: "OurServices" */ '@/pages/OurServices');
 
@@ -27,12 +28,13 @@ const $router = new Router({
     }
   },
   routes: [
-    { path: '/', name: 'Home', component: Home,},
-    { path: '/groupStructure', name: 'GroupStructure', component: GroupStructure,},
-    { path: '/nuclearAdvantage', name: 'NuclearAdvantage', component: NuclearAdvantage,},
-    { path: '/teamMembers', name: 'TeamMembers', component: TeamMembers,},
-    { path: '/serviceScope', name: 'ServiceScope', component: ServiceScope,},
-    { path: '/ourServices', name: 'OurServices', component: OurServices,},
+    { path: '/', name: 'home', component: Home,},
+    { path: '/groupStructure', name: 'groupStructure', component: GroupStructure,},
+    { path: '/nuclearAdvantage', name: 'nuclearAdvantage', component: NuclearAdvantage,},
+    { path: '/teamMembers', name: 'teamMembers', component: TeamMembers,},
+    { path: '/teamMembers/detail', name: 'teamMembersDetail', component: TeamMembersDetail,},
+    { path: '/serviceScope', name: 'serviceScope', component: ServiceScope,},
+    { path: '/ourServices', name: 'ourServices', component: OurServices,},
     { path: '*', redirect: '/',},
   ]
 });
@@ -41,6 +43,12 @@ import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 NProgress.configure({ showSpinner: false }); // 显示右上角螺旋加载提示
 $router.beforeEach(function (to, from, next) {
+  if(to.name === 'home'){
+    document.getElementsByClassName("pmfo__header")[0].style.background = `transparent`
+  }else{
+    document.getElementsByClassName("pmfo__header")[0].style.background = `#061C2D`
+  }
+  
   NProgress.start();
   next();
 });

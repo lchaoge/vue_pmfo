@@ -1,5 +1,5 @@
 <template>
-<div class="pmfo-nuclearAdvantage">
+<div class="pmfo-main">
   <div class="pmfo-nuclearAdvantage__banner">
     <div class="pmfo-nuclearAdvantage__banner-textbox">
       <h3 class="pmfo-nuclearAdvantage__banner-title wow fadeInDown" data-wow-duration="1s">

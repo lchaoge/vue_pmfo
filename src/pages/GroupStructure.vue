@@ -1,5 +1,5 @@
 <template>
-  <div class="pmfo-groupStructure">
+  <div class="pmfo-main">
     <div class="pmfo-groupStructure__banner"></div>
     <div class="pmfo-groupStructure__introduce">
       <div class="pmfo-groupStructure__introduce-title wow fadeInDown" data-wow-duration="1s">
