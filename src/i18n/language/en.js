@@ -1,3 +1,15 @@
+import avatarImage1 from '@/assets/avatar/1.png'
+import avatarImage2 from '@/assets/avatar/2.png'
+import avatarImage3 from '@/assets/avatar/3.png'
+import avatarImage4 from '@/assets/avatar/4.png'
+import avatarImage5 from '@/assets/avatar/5.png'
+
+import bigAvatarImage1 from '@/assets/avatar/1.jpg'
+import bigAvatarImage2 from '@/assets/avatar/2.jpg'
+import bigAvatarImage3 from '@/assets/avatar/3.jpg'
+import bigAvatarImage4 from '@/assets/avatar/4.jpg'
+import bigAvatarImage5 from '@/assets/avatar/5.jpg'
+
 export default {
   projectTitle: 'Pinnacle Millennium Family Office',
   common: {
@@ -152,26 +164,48 @@ export default {
   },
   teamMembers: {
     pagetitle: 'Team members',
-    introduce: {
-      card1: {
-        title: 'Anthemius X. Li',
-        content: {
-          text1: 'Co-founder of Pinnacle Millennium Family Office',
-          text2: 'Anthemius X. Li graduated from the University of California, Berkeley with a double major in Economics and Media, and studied at Harvard Graduate School of Education in the Educational Leadership, Organization and Entrepreneurship program. He was one of four Chinese students admitted to the program that year. In 2013, he graduated from the Special Class of Science and Technology of Beijing Bayi School, and won the 2012 Destination Imagination Instant Challenge Competition (the first championship win for the Chinese team). In 2021, he received a bachelor’s degree in Economics and Communication from University of California, Berkeley. That same year, he was offered acceptance to Harvard University, Columbia University, Johns Hopkins University, Duke University and many others.',
-          text3: '',
-          text4: '',
-        }
+    personalIntroduction: "Personal Introduction",
+    coreMembers:{
+      title: {
+        text: "Core",
+        em: "Members"
       },
-      card2: {
-        title: 'Sandy Chen Haijie',
-        content: {
-          text1: 'Graduated from Guanghua School of Management of Peking University, she is currently serving as a global innovative on the Internet of Things enterprise, BOE CMO. She has served as the former dean of the Marketing School of Schneider Electric Appliances (China) and the former deputy general manager of Singapore Fangling Company. She has more than 25 years of long-term experience in B2B/B2C market strategy and multiple certificates of DDI leadership, including international ATD certificate, Achieve Global/Porter Henry/SPI/Celemi, and many other international integrated marketing certificates. Responsible for integrated marketing strategy planning, key account and high-level negotiation skills, channel management, value negotiation/value presentation skills, DDI leadership training, Decision Base, and other leadership related fields.',
-          text2: '',
-          text3: '',
-          text4: '',
-        }
-      }
-    }
+      content: "",
+      list: [
+        {
+          index: "1", 
+          title:"Sandy Chen Haijie",
+          avatar: avatarImage1,
+          bigAvatar: bigAvatarImage1,
+          content: [
+            'Graduated from Guanghua School of Management of Peking University, she is currently serving as a global innovative on the Internet of Things enterprise, BOE CMO. ',
+            'She has served as the former dean of the Marketing School of Schneider Electric Appliances (China) and the former deputy general manager of Singapore Fangling Company. She has more than 25 years of long-term experience in B2B/B2C market strategy and multiple certificates of DDI leadership, including international ATD certificate, Achieve Global/Porter Henry/SPI/Celemi, and many other international integrated marketing certificates.',
+            'Responsible for integrated marketing strategy planning, key account and high-level negotiation skills, channel management, value negotiation/value presentation skills, DDI leadership training, Decision Base, and other leadership related fields.',
+          ]
+        },
+        {
+          index: "2", 
+          title:"Anthemius X. Li",
+          avatar: avatarImage2,
+          bigAvatar: bigAvatarImage2,
+          content: [
+            'Co-founder of Pinnacle Millennium Family Office',
+            'Anthemius X. Li graduated from the University of California, Berkeley with a double major in Economics and Media, and studied at Harvard Graduate School of Education in the Educational Leadership, Organization and Entrepreneurship program. He was one of four Chinese students admitted to the program that year. In 2013, he graduated from the Special Class of Science and Technology of Beijing Bayi School, and won the 2012 Destination Imagination Instant Challenge Competition (the first championship win for the Chinese team).',
+            'In 2021, he received a bachelor’s degree in Economics and Communication from University of California, Berkeley.',
+            'That same year, he was offered acceptance to Harvard University, Columbia University, Johns Hopkins University, Duke University and many others.',
+          ]
+        },
+      ]
+    },
+    speciallyConsultant:{
+      title: {
+        text: "Specially Invited ",
+        em: "Consultant"
+      },
+      content: "",
+      list: []
+    },
+    
   },
   serviceScope: {
     pagetitle: 'Service scope',

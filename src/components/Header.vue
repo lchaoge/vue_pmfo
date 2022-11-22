@@ -92,7 +92,8 @@ export default {
 
       document.getElementsByClassName("pmfo")[0].className = `pmfo pmfo-${lang}`
       document.getElementsByTagName("html")[0].setAttribute("lang",lang)
-      // window.location.reload()
+
+      this.$router.go(0)
     }
   }
 }

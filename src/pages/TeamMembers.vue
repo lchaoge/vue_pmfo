@@ -1,103 +1,54 @@
 <template>
   <div class="pmfo-main">
-    <div class="pmfo-teamMembers__module">
+    <div class="pmfo-teamMembers__module" v-if="coreMembers.length>0">
       <h3 class="pmfo-teamMembers__module-title wow fadeInUp" data-wow-duration="1s">
-        <span class="pmfo-teamMembers__module-title-text">核心</span>
-        <span class="pmfo-teamMembers__module-title-em">成员</span>
+        <span class="pmfo-teamMembers__module-title-text">{{$t('teamMembers.coreMembers.title.text')}}</span>
+        <span class="pmfo-teamMembers__module-title-em">{{$t('teamMembers.coreMembers.title.em')}}</span>
       </h3>
-      <p class="pmfo-teamMembers__module-subtitle wow fadeInUp" data-wow-duration="1.2s">瓴峰百年国际教育集团帮助中国⾼净值和超⾼净值家庭提供私密定制化教育解决⽅案，引领每⼀位学⽣通过数字化科技教育⽅式赋能学⽣，通过洞察世界来选择⾃⼰的未来最佳发展路径，帮助学⽣和家⻓共同设⽴⽬标和抱负，以终为始，⽆问⻄东。</p>
+      <p class="pmfo-teamMembers__module-subtitle wow fadeInUp" data-wow-duration="1.2s">{{$t('teamMembers.coreMembers.content')}}</p>
       <div class="pmfo-teamMembers__module-cardbox wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
         <div class="pmfo-teamMembers__module-cardbox-content">
           <el-row type="flex">
-            <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
-              <div class="pmfo-teamMembers__module-card" @click="detail(1)">
+            <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6" v-for="item in coreMembers" :key="item.index">
+              <div class="pmfo-teamMembers__module-card" @click="detail('coreMembers',item.index)">
                 <div class="pmfo-teamMembers__module-card-front">
-                  <img src="@/assets/avatar/1.png" class="wow fadeIn" data-wow-duration="1s" data-wow-delay="1s" />
+                  <img :src="item.avatar" class="wow fadeIn" data-wow-duration="1s" :data-wow-delay="`1.${2*item.index-1}s`" />
                 </div>
                 <div class="pmfo-teamMembers__module-card-after">
                   <div class="pmfo-teamMembers__module-card-after-content">
-                    <div class="pmfo-teamMembers__module-card-after-title">林红霞</div>
+                    <div class="pmfo-teamMembers__module-card-after-title">{{item.title}}</div>
                     <div class="pmfo-teamMembers__module-card-after-button">
                       <div class="_border"></div>
-                      <span class="_cta">个人介绍</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </el-col>
-            <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
-              <div class="pmfo-teamMembers__module-card" @click="detail(2)">
-                <div class="pmfo-teamMembers__module-card-front">
-                  <img src="@/assets/avatar/2.png" class="wow fadeIn" data-wow-duration="1s" data-wow-delay="1.2s" />
-                </div>
-                <div class="pmfo-teamMembers__module-card-after">
-                  <div class="pmfo-teamMembers__module-card-after-content">
-                    <div class="pmfo-teamMembers__module-card-after-title">林红霞</div>
-                    <div class="pmfo-teamMembers__module-card-after-button">
-                      <div class="_border"></div>
-                      <span class="_cta">个人介绍</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </el-col>
-            <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
-              <div class="pmfo-teamMembers__module-card" @click="detail(3)">
-                <div class="pmfo-teamMembers__module-card-front">
-                  <img src="@/assets/avatar/3.png" class="wow fadeIn" data-wow-duration="1s" data-wow-delay="1.4s" />
-                </div>
-                <div class="pmfo-teamMembers__module-card-after">
-                  <div class="pmfo-teamMembers__module-card-after-content">
-                    <div class="pmfo-teamMembers__module-card-after-title">林红霞</div>
-                    <div class="pmfo-teamMembers__module-card-after-button">
-                      <div class="_border"></div>
-                      <span class="_cta">个人介绍</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </el-col>
-            <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
-              <div class="pmfo-teamMembers__module-card" @click="detail(4)">
-                <div class="pmfo-teamMembers__module-card-front">
-                  <img src="@/assets/avatar/4.png" class="wow fadeIn" data-wow-duration="1s" data-wow-delay="1.6s" />
-                </div>
-                <div class="pmfo-teamMembers__module-card-after">
-                  <div class="pmfo-teamMembers__module-card-after-content">
-                    <div class="pmfo-teamMembers__module-card-after-title">林红霞</div>
-                    <div class="pmfo-teamMembers__module-card-after-button">
-                      <div class="_border"></div>
-                      <span class="_cta">个人介绍</span>
+                      <span class="_cta">{{$t('teamMembers.personalIntroduction')}}</span>
                     </div>
                   </div>
                 </div>
               </div>
             </el-col>
           </el-row>
-        </div>
-        
+        </div>  
       </div>
     </div>
-    <div class="pmfo-teamMembers__module">
+    <div class="pmfo-teamMembers__module" v-if="speciallyConsultant.length>0">
       <h3 class="pmfo-teamMembers__module-title wow fadeInUp" data-wow-duration="1s">
-        <span class="pmfo-teamMembers__module-title-text">特邀</span>
-        <span class="pmfo-teamMembers__module-title-em">顾问</span>
+        <span class="pmfo-teamMembers__module-title-text">{{$t('teamMembers.speciallyConsultant.title.text')}}</span>
+        <span class="pmfo-teamMembers__module-title-em">{{$t('teamMembers.speciallyConsultant.title.em')}}</span>
       </h3>
-      <p class="pmfo-teamMembers__module-subtitle wow fadeInUp" data-wow-duration="1.2s">瓴峰百年国际教育集团帮助中国⾼净值和超⾼净值家庭提供私密定制化教育解决⽅案，引领每⼀位学⽣通过数字化科技教育⽅式赋能学⽣，通过洞察世界来选择⾃⼰的未来最佳发展路径，帮助学⽣和家⻓共同设⽴⽬标和抱负，以终为始，⽆问⻄东。</p>
+      <p class="pmfo-teamMembers__module-subtitle wow fadeInUp" data-wow-duration="1.2s">{{$t('teamMembers.speciallyConsultant.content')}}</p>
       <div class="pmfo-teamMembers__module-cardbox wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
         <div class="pmfo-teamMembers__module-cardbox-content">
           <el-row type="flex">
-            <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6">
-              <div class="pmfo-teamMembers__module-card" @click="detail(5)">
+            <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6" v-for="item in speciallyConsultant" :key="item.index">
+              <div class="pmfo-teamMembers__module-card" @click="detail('speciallyConsultant',item.index)">
                 <div class="pmfo-teamMembers__module-card-front">
-                  <img src="@/assets/avatar/5.png" class="wow fadeIn" data-wow-duration="1s" data-wow-delay="1s" />
+                  <img :src="item.avatar" class="wow fadeIn" data-wow-duration="1s" :data-wow-delay="`1.${2*item.index-1}s`" />
                 </div>
                 <div class="pmfo-teamMembers__module-card-after">
                   <div class="pmfo-teamMembers__module-card-after-content">
-                    <div class="pmfo-teamMembers__module-card-after-title">林红霞</div>
+                    <div class="pmfo-teamMembers__module-card-after-title">{{item.title}}</div>
                     <div class="pmfo-teamMembers__module-card-after-button">
                       <div class="_border"></div>
-                      <span class="_cta">个人介绍</span>
+                      <span class="_cta">{{$t('teamMembers.personalIntroduction')}}</span>
                     </div>
                   </div>
                 </div>
@@ -117,18 +68,25 @@ export default {
   },
   data(){
     return {
+      coreMembers: [],
+      speciallyConsultant: []
     }
   },
+  created(){
+    this.coreMembers = this.$t('teamMembers.coreMembers.list')
+    this.speciallyConsultant = this.$t('teamMembers.speciallyConsultant.list')
+  },
   mounted() {
+    
     this.$nextTick(() => {
       new this.$wow.WOW().init();
     });
   },
   methods: {
-    detail(id){
+    detail(type,index){
       this.$router.push({
         path: "/teamMembers/detail", 
-        query: { id }
+        query: { index,type }
       })
     }
   }

@@ -1,3 +1,15 @@
+import avatarImage1 from '@/assets/avatar/1.png'
+import avatarImage2 from '@/assets/avatar/2.png'
+import avatarImage3 from '@/assets/avatar/3.png'
+import avatarImage4 from '@/assets/avatar/4.png'
+import avatarImage5 from '@/assets/avatar/5.png'
+
+import bigAvatarImage1 from '@/assets/avatar/1.jpg'
+import bigAvatarImage2 from '@/assets/avatar/2.jpg'
+import bigAvatarImage3 from '@/assets/avatar/3.jpg'
+import bigAvatarImage4 from '@/assets/avatar/4.jpg'
+import bigAvatarImage5 from '@/assets/avatar/5.jpg'
+
 export default {
   projectTitle: 'Pinnacle Millennium Family Office',
   common: {
@@ -152,26 +164,47 @@ export default {
   },
   teamMembers: {
     pagetitle: '团队成员',
-    introduce: {
-      card1: {
-        title: '李啸',
-        content: {
-          text1: '瓴峰百年教育家族办公室联合创始人',
-          text2: '本科毕业于加州伯克利大学经济传媒双专业，就读哈佛大学教育领导力，组织和创业学院，当年录取的四位中国学生之一。2013年毕业于北京市八一学校科技特长班[2]，在校期间获2012全球头脑创新思维大赛（Destination Imagination）即时挑战赛冠军（中国队首次）；',
-          text3: '2021年获得加州大学伯克利分校经济学和传媒学双学士学位；',
-          text4: '同年被哈佛大学、哥伦比亚大学、约翰霍普金斯大学、杜克大学等多所院校录取。',
-        }
+    personalIntroduction: "个人介绍",
+    coreMembers:{
+      title: {
+        text: "核心",
+        em: "成员"
       },
-      card2: {
-        title: '陈海杰',
-        content: {
-          text1: '北京大学光华管理学院毕业，现任全球创新型物联网企业京东方CMO。曾担任前施耐德电气（中国）营销学院院长，前新加坡方菱公司副总经理，拥有超过25年长期B2B/B2C实战市场战略经验和多项证书DDI领导力认证讲师，其中包括国际ATD证书认证证书、Achieve Global/Porter Henry/SPI/Celemi 等多项国际整合市场营销认证证书。负责整合市场营销战略规划，大客户及高层谈判技巧，渠道管理，价值谈判/价值呈现技巧。DDI领导力培训，Decision Base，等领导力相关领域。',
-          text2: '',
-          text3: '',
-          text4: '',
-        }
-      }
-    }
+      content: "瓴峰百年国际教育集团帮助中国⾼净值和超⾼净值家庭提供私密定制化教育解决⽅案，引领每⼀位学⽣通过数字化科技教育⽅式赋能学⽣，通过洞察世界来选择⾃⼰的未来最佳发展路径，帮助学⽣和家⻓共同设⽴⽬标和抱负，以终为始，⽆问⻄东。",
+      list: [
+        {
+          index: "1", 
+          title:"陈海杰",
+          avatar: avatarImage1,
+          bigAvatar: bigAvatarImage1,
+          content: [
+            "北京大学光华管理学院毕业，现任全球创新型物联网企业京东方CMO。",
+            "曾担任前施耐德电气（中国）营销学院院长，前新加坡方菱公司副总经理，拥有超过25年长期B2B/B2C实战市场战略经验和多项证书DDI领导力认证讲师，其中包括国际ATD证书认证证书、Achieve Global/Porter Henry/SPI/Celemi 等多项国际整合市场营销认证证书。",
+            "负责整合市场营销战略规划，大客户及高层谈判技巧，渠道管理，价值谈判/价值呈现技巧。DDI领导力培训，Decision Base，等领导力相关领域。",
+          ]
+        },
+        {
+          index: "2", 
+          title:"李啸",
+          avatar: avatarImage2,
+          bigAvatar: bigAvatarImage2,
+          content: [
+            '瓴峰百年教育家族办公室联合创始人',
+            '本科毕业于加州伯克利大学经济传媒双专业，就读哈佛大学教育领导力，组织和创业学院，当年录取的四位中国学生之一。2013年毕业于北京市八一学校科技特长班[2]，在校期间获2012全球头脑创新思维大赛（Destination Imagination）即时挑战赛冠军（中国队首次）；',
+            '2021年获得加州大学伯克利分校经济学和传媒学双学士学位；',
+            '同年被哈佛大学、哥伦比亚大学、约翰霍普金斯大学、杜克大学等多所院校录取。',
+          ]
+        },
+      ]
+    },
+    speciallyConsultant:{
+      title: {
+        text: "特邀",
+        em: "顾问"
+      },
+      content: "瓴峰百年国际教育集团帮助中国⾼净值和超⾼净值家庭提供私密定制化教育解决⽅案，引领每⼀位学⽣通过数字化科技教育⽅式赋能学⽣，通过洞察世界来选择⾃⼰的未来最佳发展路径，帮助学⽣和家⻓共同设⽴⽬标和抱负，以终为始，⽆问⻄东。",
+      list: []
+    },
   },
   serviceScope: {
     pagetitle: '服务范围',

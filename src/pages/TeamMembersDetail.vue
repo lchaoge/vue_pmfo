@@ -3,11 +3,11 @@
     <div class="pmfo-teamMembersDetail">
       <div class="pmfo-teamMembersDetail__container">
         <div class="pmfo-teamMembersDetail__people" ref="people">
-          <img class="pmfo-teamMembersDetail__people-image" :src="detail.image" />
+          <img class="pmfo-teamMembersDetail__people-image" :src="detail.bigAvatar" />
           <div class="pmfo-teamMembersDetail__people-content">
             <div class="person-content">
               <div class="person-content-inside">
-                <a class="section-link" @click="backspace">INVESTOR</a>
+                <a class="section-link" @click="backspace">{{type === "coreMembers" ? `${$t('teamMembers.coreMembers.title.text')}${$t('teamMembers.coreMembers.title.em')}` : `${$t('teamMembers.speciallyConsultant.title.text')}${$t('teamMembers.speciallyConsultant.title.em')}`}}</a>
                 <span class="header-name">{{detail.title}}</span>
               </div>
             </div>
@@ -17,16 +17,14 @@
           <div class="pmfo-teamMembersDetail__introduce-header">
             <div class="person-content">
               <div class="person-content-inside">
-                <a class="section-link" @click="backspace">INVESTOR</a>
+                <a class="section-link" @click="backspace">{{type === "coreMembers" ? `${$t('teamMembers.coreMembers.title.text')}${$t('teamMembers.coreMembers.title.em')}` : `${$t('teamMembers.speciallyConsultant.title.text')}${$t('teamMembers.speciallyConsultant.title.em')}`}}</a>
                 <span class="header-name">{{detail.title}}</span>
               </div>
             </div>
           </div>
           <div class="pmfo-teamMembersDetail__introduce-body">
             <div class="article">
-              <p>
-                <strong>{{detail.title}}</strong>{{detail.content}}
-              </p>
+              <p v-for="item in detail.content" :key="item">{{item}}</p>
             </div>
           </div>
         </div>
@@ -35,11 +33,6 @@
   </div>
 </template>
 <script>
-import image1 from '@/assets/avatar/01.jpg'
-import image2 from '@/assets/avatar/02.jpg'
-import image3 from '@/assets/avatar/03.jpg'
-import image4 from '@/assets/avatar/04.jpg'
-import image5 from '@/assets/avatar/05.jpg'
 export default {
   name: 'PmfoTeamMembersDetail',
   props: {
@@ -47,25 +40,31 @@ export default {
   data(){
     return {
       marginTop: 0,
-      list:[
-        {index: "1", title:"冯馨1",content:"，红杉中国董事总经理",image:image1},
-        {index: "2", title:"冯馨2",content:"，红杉中国董事总经理",image:image2},
-        {index: "3", title:"冯馨3",content:"，红杉中国董事总经理",image:image3},
-        {index: "4", title:"冯馨4",content:"，红杉中国董事总经理",image:image4},
-        {index: "5", title:"冯馨5",content:"，红杉中国董事总经理",image:image5},
-      ],
+      coreMembers: [],
+      speciallyConsultant: [],
       detail:{
         title: undefined,
         content: undefined,
         image: undefined
-      }
+      },
+      type: "coreMembers"
     }
   },
-  mounted() {debugger
-    const {id} = this.$route.query
-    this.detail = this.list.find(el=>el.index === id)
+  mounted() {
+    this.coreMembers = this.$t('teamMembers.coreMembers.list')
+    this.speciallyConsultant = this.$t('teamMembers.speciallyConsultant.list')
+    const {index,type} = this.$route.query
+    this.type = type
+    if(type === "coreMembers"){
+      this.detail = this.coreMembers.find(el=>el.index === index)
+    }else if(type === "speciallyConsultant"){
+      this.detail = this.speciallyConsultant.find(el=>el.index === index)
+    }
+    
   },
   created(){
+    
+    
     this.$nextTick(() => {
       new this.$wow.WOW().init();
       setTimeout(() => {
