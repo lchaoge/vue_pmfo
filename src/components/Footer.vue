@@ -36,6 +36,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .pmfo__footer-wrapper span,.pmfo__footer-wrapper a{
   padding: 0 8px;
