@@ -128,7 +128,7 @@ export default {
     detail(id){
       this.$router.push({
         path: "/teamMembers/detail", 
-        params: { id }
+        query: { id }
       })
     }
   }

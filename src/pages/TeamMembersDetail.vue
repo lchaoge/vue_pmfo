@@ -3,12 +3,12 @@
     <div class="pmfo-teamMembersDetail">
       <div class="pmfo-teamMembersDetail__container">
         <div class="pmfo-teamMembersDetail__people" ref="people">
-          <img class="pmfo-teamMembersDetail__people-image" src="https://d33wubrfki0l68.cloudfront.net/8aa0961ee3915881294e9715d8aacb64afab083c/26667/img/c/_w1600_q80.png" />
+          <img class="pmfo-teamMembersDetail__people-image" :src="detail.image" />
           <div class="pmfo-teamMembersDetail__people-content">
             <div class="person-content">
               <div class="person-content-inside">
                 <a class="section-link" @click="backspace">INVESTOR</a>
-                <span class="header-name">冯馨</span>
+                <span class="header-name">{{detail.title}}</span>
               </div>
             </div>
           </div>
@@ -18,14 +18,14 @@
             <div class="person-content">
               <div class="person-content-inside">
                 <a class="section-link" @click="backspace">INVESTOR</a>
-                <span class="header-name">冯馨</span>
+                <span class="header-name">{{detail.title}}</span>
               </div>
             </div>
           </div>
           <div class="pmfo-teamMembersDetail__introduce-body">
             <div class="article">
               <p>
-                <strong>冯馨</strong>，红杉中国董事总经理
+                <strong>{{detail.title}}</strong>{{detail.content}}
               </p>
             </div>
           </div>
@@ -35,6 +35,11 @@
   </div>
 </template>
 <script>
+import image1 from '@/assets/avatar/01.jpg'
+import image2 from '@/assets/avatar/02.jpg'
+import image3 from '@/assets/avatar/03.jpg'
+import image4 from '@/assets/avatar/04.jpg'
+import image5 from '@/assets/avatar/05.jpg'
 export default {
   name: 'PmfoTeamMembersDetail',
   props: {
@@ -42,11 +47,23 @@ export default {
   data(){
     return {
       marginTop: 0,
+      list:[
+        {index: "1", title:"冯馨1",content:"，红杉中国董事总经理",image:image1},
+        {index: "2", title:"冯馨2",content:"，红杉中国董事总经理",image:image2},
+        {index: "3", title:"冯馨3",content:"，红杉中国董事总经理",image:image3},
+        {index: "4", title:"冯馨4",content:"，红杉中国董事总经理",image:image4},
+        {index: "5", title:"冯馨5",content:"，红杉中国董事总经理",image:image5},
+      ],
+      detail:{
+        title: undefined,
+        content: undefined,
+        image: undefined
+      }
     }
   },
-  mounted() {
-    
-   
+  mounted() {debugger
+    const {id} = this.$route.query
+    this.detail = this.list.find(el=>el.index === id)
   },
   created(){
     this.$nextTick(() => {
@@ -101,7 +118,7 @@ export default {
   box-sizing: border-box;
   height: 100%;
   position: relative;
-  left: 57%;
+  left: 8%;
   width: 35%;
   text-align: center;
 }

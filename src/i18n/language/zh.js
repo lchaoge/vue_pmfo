@@ -15,9 +15,10 @@ export default {
       item3: '繁'
     },
     footer: {
-      text1: 'Copyright © 2022  Pinnacle Millennium Family Office ｜ 京ICP备2022028874号-1',
+      text1: 'Copyright © 2022  Pinnacle Millennium Family Office',
       text2: '中国办公室：北京市朝阳区北四环中路27号盘古大观9-901',
-      text3: '美国办公室：美国 加利福尼亚州 米尔皮塔斯市 麦卡锡大道 1851 号'
+      text3: '美国办公室：美国 加利福尼亚州 米尔皮塔斯市 麦卡锡大道 1851 号',
+      text4: '京ICP备11010502051156号',
     }
   },
   home:{

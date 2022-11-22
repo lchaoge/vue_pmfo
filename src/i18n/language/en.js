@@ -15,9 +15,10 @@ export default {
       item3: 'TW'
     },
     footer: {
-      text1: 'Copyright © 2022  Pinnacle Millennium Family Office ｜ Jing ICP Bei No. 2022028874 - 1',
+      text1: 'Copyright © 2022  Pinnacle Millennium Family Office',
       text2: 'China Office: 9-901, Pangu temple, No. 27, North 4th Ring Middle Road, Chaoyang District, Beijing',
-      text3: 'US Office: 1851 McCarthy Blvd, Milpitas, CA 95035'
+      text3: 'US Office: 1851 McCarthy Blvd, Milpitas, CA 95035',
+      text4: 'Jing ICP Bei No. 11010502051156'
     }
   },
   home:{
